@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAW MOMENT | 宠物氛围生活</title>
+    <style>
+        /* 基础重置与电影感配色 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: #F8F7F5; /* 暖灰石膏色 */
+            color: #2C2C2C; /* 深灰而非纯黑，降低对比度 */
+            line-height: 1.6;
+        }
+
+        /* 沉浸式顶部导航 */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 24px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(248, 247, 245, 0.8);
+            backdrop-filter: blur(10px); /* 毛玻璃效果 */
+            z-index: 100;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-family: "Times New Roman", Times, serif; /* 衬线体增加高级感 */
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            margin-left: 30px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #000;
+        }
+
+        /* 电影感首屏海报区 */
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image: url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2); /* 压暗背景，突出文字 */
+        }
+        .hero-text {
+            position: relative;
+            z-index: 10;
+            color: #fff;
+        }
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+            font-family: "Times New Roman", Times, serif;
+        }
+        .hero-text p {
+            font-size: 16px;
+            letter-spacing: 2px;
+            opacity: 0.9;
+        }
+
+        /* 呼吸感商品画廊 */
+        .gallery {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 5%;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+            color: #333;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        .card {
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+        }
+        .img-container {
+            width: 100%;
+            aspect-ratio: 3/4; /* 经典人像/静物构图比例 */
+            overflow: hidden;
+            background-color: #EBEBEB;
+        }
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .card:hover .img-container img {
+            transform: scale(1.05); /* 缓慢放大的微动态 */
+        }
+        .info {
+            padding-top: 20px;
+            text-align: center;
+        }
+        .info h3 {
+            font-size: 15px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .info p {
+            font-size: 14px;
+            color: #8c7a6b; /* 高级质感的大地色 */
+        }
+
+        /* 极简页脚 */
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            font-size: 12px;
+            color: #999;
+            letter-spacing: 1px;
+            border-top: 1px solid #EAEAEA;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">PAW MOMENT</div>
+        <div class="nav-links">
+            <a href="#">首页</a>
+            <a href="#">精选好物</a>
+            <a href="#">空间美学</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Quiet Accents</h1>
+            <p>捕捉细腻光影，给宠物的质感生活</p>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <h2 class="section-title">- 氛围单品 -</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=800&auto=format&fit=crop" alt="宠物商品1">
+                </div>
+                <div class="info">
+                    <h3>原木风慢食碗</h3>
+                    <p>¥ 128.00</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?q=80&w=800&auto=format&fit=crop" alt="宠物商品2">
+                </div>
+                <div class="info">
+                    <h3>微距细节 | 护理系列</h3>
+                    <p>¥ 89.00</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?q=80&w=800&auto=format&fit=crop" alt="宠物商品3">
+                </div>
+                <div class="info">
+                    <h3>亚麻触感安睡垫</h3>
+                    <p>¥ 256.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 PAW MOMENT. Designed for Aesthetic Life.
+    </footer>
+
+</body>
+</html>
